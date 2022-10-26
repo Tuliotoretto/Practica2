@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Practica2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_song_button_description">add song button</string>
+    <string name="title_hint">Title</string>
+    <string name="band_hint">Band</string>
+    <string name="add_button_text">Add</string>
+    <string name="update_button_text">Update</string>
+    <string name="title_text_placeholder">title</string>
+    <string name="band_text_placeholder">band</string>
+
+    <!-- Spinner -->
+    <string-array name="genres_array">
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Hip Hop</item>
+        <item>Jazz</item>
+        <item>Reggaeton</item>
+    </string-array>
+</resources>
