@@ -2,6 +2,7 @@ package com.jglognemra.practica2.view.fragments
 
 import android.app.AlertDialog
 import android.graphics.Color
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -38,6 +39,12 @@ class ListFragment : Fragment() {
         mSongViewModel = ViewModelProvider(this)[SongViewModel::class.java]
         mSongViewModel.readAllData.observe(viewLifecycleOwner, Observer { song ->
             adapter.setData(song)
+
+            if (adapter.itemCount == 0) {
+                binding.tvNoItems.visibility = View.VISIBLE
+            } else {
+                binding.tvNoItems.visibility = View.INVISIBLE
+            }
         })
 
         binding.btnAdd.setOnClickListener {
@@ -69,7 +76,6 @@ class ListFragment : Fragment() {
         alertDialog.setPositiveButton("Yes") {_,_ ->
             mSongViewModel.deleteAllSongs()
             Toast.makeText(requireContext(),"All Songs removed", Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
         alertDialog.setNegativeButton("No") {_, _ ->
 
